@@ -36,12 +36,12 @@ namespace RTree
 		}
 
         public IEnumerable<T> Search() {
-            return GetAllChildren(this.root).ToList();
+            return GetAllChildren(this.root);
         }
 
 		public IEnumerable<T> Search(Envelope boundingBox)
 		{
-			return DoSearch(boundingBox).Select(x => (T)x.Peek()).ToList();
+			return DoSearch(boundingBox).Select(x => (T)x.Peek());
 		}
 
 		public void Insert(T item)
